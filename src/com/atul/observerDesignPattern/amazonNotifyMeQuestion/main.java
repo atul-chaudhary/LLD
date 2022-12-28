@@ -13,6 +13,9 @@ public class main {
     public static void main(String[] args) {
         StockObservable observable = new IphoneObservableImpl();
 
+        //here we are setting the relevant information along
+        // with we are telling the observer that which observable i'm currently looking for
+        //that's why we are passing the observable
         NotificationAlertObserver observer1 = new EmailAlertObserver("xyx@gamil.com", observable);
         NotificationAlertObserver observer2 = new EmailAlertObserver("fck@gamil.com", observable);
         NotificationAlertObserver observer3 = new EmailAlertObserver("honey@gami.com", observable);
