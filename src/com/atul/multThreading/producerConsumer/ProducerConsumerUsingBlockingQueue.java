@@ -1,4 +1,4 @@
-package com.atul.producerConsumer;
+package com.atul.multThreading.producerConsumer;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
