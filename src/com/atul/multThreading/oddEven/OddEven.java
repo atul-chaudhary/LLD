@@ -12,7 +12,7 @@ public class OddEven {
                     e.printStackTrace();
                 }
             }
-        });
+        }, "oddThread");
 
         Thread even = new Thread(new Runnable() {
             @Override
@@ -23,7 +23,7 @@ public class OddEven {
                     e.printStackTrace();
                 }
             }
-        });
+        }, "evenThread");
 
         odd.start();
         even.start();
@@ -37,7 +37,8 @@ class Product {
     public void printOdd() throws InterruptedException {
         while (true) {
             synchronized (this) {
-                System.out.println("odd thread print number " + num++);
+                if (num % 2 == 0) wait();
+                System.out.println(Thread.currentThread().getName()+" odd thread print number " + num++);
                 Thread.sleep(1000);
                 notify();
             }
@@ -47,7 +48,10 @@ class Product {
     public void printEven() throws InterruptedException {
         while (true) {
             synchronized (this) {
-                System.out.println("even Thread prints number " + num++);
+                if (num % 2 != 0) {
+                    wait();
+                }
+                System.out.println(Thread.currentThread().getName()+ "even Thread prints number " + num++);
                 Thread.sleep(1000);
                 notify();
             }

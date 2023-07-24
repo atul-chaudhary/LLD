@@ -3,7 +3,7 @@ package com.atul.multThreading.producerConsumer;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class NormalProducerConsumerProblem {
+public class  NormalProducerConsumerProblem {
 
 
     public static void main(String[] args) {
